@@ -1,39 +1,31 @@
-#include <iostream>
-#include <iomanip>
+#include<iostream>
+#include<iomanip>
 using namespace std;
-class complex
-{
-private:
+class complex{
     int a;
     int b;
-
-public:
-    void setdata(int v1, int v2)
-    {
-        a = v1;
-        b = v2;
+    public:
+    complex(){
+        a=0;
+        b=0;
     }
-    void setdatabysum(complex O1, complex O2)
-    {
-        a = O1.a + O2.a;
-        b = O1.b + O2.b;
+    complex(int x){
+       a=x;
+       b=0;
     }
-    void display()
-    {
-        cout << "THE COMPLEX NUMBER IS" << a << "+"
-             << "i" << b << endl;
+    complex(int x,int y){
+       a=x;
+       b=x;
+    }
+    void display(){
+        cout<<"The number are"<<a<<","<<b<<endl;
     }
 };
-int main()
-{
-    complex c1, c2, c3;
-    c1.setdata(5, 7);
+int main(){
+    complex c1,c2(5),c3(2,3);
+    
     c1.display();
-
-    c2.setdata(1, 2);
     c2.display();
-
-    c3.setdatabysum(c1, c2);
     c3.display();
     return 0;
 }
